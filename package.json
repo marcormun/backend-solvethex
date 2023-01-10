@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "knex:migrate:make": "knex --knexfile knexfile.ts migrate:make",
+    "knex:migrate:latest": "knex --knexfile knexfile.ts migrate:latest",
+    "knex:migrate:rollback": "knex --knexfile knexfile.ts migrate:rollback"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +20,7 @@
     "jsonwebtoken": "^9.0.0",
     "knex": "^2.4.0",
     "sqlite3": "^5.1.4",
+    "ts-node": "^10.9.1",
     "typeorm": "^0.3.11"
   }
 }

@@ -1,8 +1,7 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.up = function(knex) {
+import { Knex } from "knex";
+
+
+export async function up(knex: Knex): Promise<void> {
     return knex.schema.createTable("clients", (table) => {
         table.increments("id").primary();
         table.string("name", 255).notNullable();
@@ -10,12 +9,10 @@ exports.up = function(knex) {
         table.string("password", 255).notNullable();
         table.timestamps(false, true);
     });
-};
+}
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
-exports.down = function(knex) {
+
+export async function down(knex: Knex): Promise<void> {
     return knex.schema.dropTable("clients");
-};
+}
+
