@@ -4,9 +4,6 @@ module.exports = {
       connection: {
         filename: './dev.sqlite3'
       },
-      useNullAsDefault: true,
-      migrations: { 
-        directory: path.join(__dirname, "./migrations") 
-      }
+      useNullAsDefault: true
     }
   };
